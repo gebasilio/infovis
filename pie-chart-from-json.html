@@ -1,0 +1,23 @@
+<!doctype html>
+<meta charset="utf-8">
+
+<!-- load D3js -->
+<script src="//d3plus.org/js/d3.js"></script>
+
+<!-- load D3plus after D3js -->
+<script src="//d3plus.org/js/d3plus.js"></script>
+
+<!-- create container element for visualization -->
+<div id="viz"></div>
+
+<script>
+  // instantiate d3plus
+  var visualization = d3plus.viz()
+    .container("#viz")  // container DIV to hold the visualization
+    .data("https://gebasilio.github.io/infovis/carreras.json")  // data to use with the visualization
+    .type("pie")    // visualization type
+    .size("cantidad")
+    .id("carrera")         // key for which our data is unique on
+    .time("anio")       // key to use for time
+    .draw()             // finally, draw the visualization!
+</script>
